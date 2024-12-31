@@ -7,44 +7,67 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Yusuf Can</h1>
-        <p>Welcome to my personal website showcasing my professional journey, publications, and resume.</p>
-    </header>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a dedicated professional in political science and Middle Eastern affairs, passionate about fostering impactful dialogue and innovative solutions. 
-                Currently, I serve as the Program Coordinator for the Middle East Program at The Wilson Center.
-            </p>
-        </section>
-        <section id="resume">
-            <h2>Resume</h2>
-            <p>Download my full resume: <a href="Resume_Yusuf_Can.pdf" target="_blank">Resume_Yusuf_Can.pdf</a></p>
-        </section>
-        <section id="publications">
-            <h2>Publications</h2>
-            <ul>
-                <li><a href="#" target="_blank">"Shaping Middle Eastern Affairs" - Wilson Center, 2024</a></li>
-                <li><a href="#" target="_blank">"Digital Economy and Youth Employment in MENA" - Bulletin of the Atomic Scientists, 2023</a></li>
-                <li><a href="#" target="_blank">"Perspectives on Democracy and Governance" - BirGün, 2022</a></li>
-            </ul>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#" target="_blank">Future of EURO-MENA Relations</a> - Analyzing trade and migration between Europe and MENA.</li>
-                <li><a href="#" target="_blank">Turkey-US Relations</a> - Coordinated high-profile events and discussions.</li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>You can reach me at <a href="mailto:ycan1412@gmail.com">ycan1412@gmail.com</a>.</p>
-        </section>
-    </main>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="headshot.jpg" alt="Yusuf Can" class="headshot">
+                <h1>Yusuf Can</h1>
+            </div>
+            <div class="social-links">
+                <a href="https://bluesky.social/" target="_blank">Bluesky</a>
+                <a href="https://twitter.com/" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+            </div>
+        </aside>
+        <main>
+            <nav class="tabs">
+                <a href="#bio" class="active">Bio</a>
+                <a href="#activities">Activities</a>
+                <a href="#publications">Publications</a>
+                <a href="#media">Media</a>
+            </nav>
+            <section id="bio" class="content active">
+                <h2>About Me</h2>
+                <p>
+                    I am a dedicated professional in political science and Middle Eastern affairs, currently serving as the Program Coordinator for the Middle East Program at The Wilson Center. 
+                </p>
+            </section>
+            <section id="activities" class="content">
+                <h2>Activities</h2>
+                <p>Details about my ongoing and past projects and initiatives.</p>
+            </section>
+            <section id="publications" class="content">
+                <h2>Publications</h2>
+                <ul>
+                    <li><a href="#" target="_blank">"Shaping Middle Eastern Affairs" - Wilson Center</a></li>
+                    <li><a href="#" target="_blank">"Digital Economy and Youth Employment in MENA" - Bulletin of the Atomic Scientists</a></li>
+                    <li><a href="#" target="_blank">"Perspectives on Democracy and Governance" - BirGün</a></li>
+                </ul>
+            </section>
+            <section id="media" class="content">
+                <h2>Media</h2>
+                <p>Interviews, mentions, and other media appearances.</p>
+            </section>
+        </main>
+    </div>
     <footer>
         <p>&copy; 2024 Yusuf Can. All rights reserved.</p>
     </footer>
+    <script>
+        // JavaScript for tab switching
+        const tabs = document.querySelectorAll('.tabs a');
+        const contents = document.querySelectorAll('.content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', e => {
+                e.preventDefault();
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                tab.classList.add('active');
+                document.querySelector(tab.getAttribute('href')).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

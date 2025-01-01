@@ -9,65 +9,36 @@
 <body>
     <div class="container">
         <aside class="sidebar">
-            <div class="profile">
-                <img src="headshot.jpg" alt="Yusuf Can" class="headshot">
-                <h1>Yusuf Can</h1>
-            </div>
-            <div class="social-links">
+            <img src="headshot.jpg" alt="Yusuf Can" class="headshot">
+            <h1>Yusuf Can</h1>
+            <nav class="social-links">
                 <a href="https://bluesky.social/" target="_blank">Bluesky</a>
                 <a href="https://twitter.com/" target="_blank">Twitter</a>
-                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-            </div>
+                <a href="https://linkedin.com/" target="_blank">Google Scholar</a>
+            </nav>
+            <p class="contact">Contact via email:<br><a href="mailto:ycan1412@gmail.com">ycan1412@gmail.com</a></p>
         </aside>
         <main>
-            <nav class="tabs">
-                <a href="#bio" class="active">Bio</a>
-                <a href="#activities">Activities</a>
+            <nav class="top-links">
+                <a href="#teaching">Teaching</a>
                 <a href="#publications">Publications</a>
-                <a href="#media">Media</a>
+                <a href="#activities">Activities</a>
             </nav>
-            <section id="bio" class="content active">
+            <section id="bio">
                 <h2>About Me</h2>
                 <p>
-                    I am a dedicated professional in political science and Middle Eastern affairs, currently serving as the Program Coordinator for the Middle East Program at The Wilson Center. 
+                    I am a dedicated professional in political science and Middle Eastern affairs, currently serving as the Program Coordinator for the Middle East Program at The Wilson Center. My work focuses on fostering impactful discussions, leading research initiatives, and connecting stakeholders across various sectors.
+                </p>
+                <p>
+                    Previously, I completed my M.A. in Democracy and Governance at Georgetown University and my B.A. in Political Science at California State University, Sacramento.
                 </p>
             </section>
-            <section id="activities" class="content">
-                <h2>Activities</h2>
-                <p>Details about my ongoing and past projects and initiatives.</p>
-            </section>
-            <section id="publications" class="content">
-                <h2>Publications</h2>
-                <ul>
-                    <li><a href="#" target="_blank">"Shaping Middle Eastern Affairs" - Wilson Center</a></li>
-                    <li><a href="#" target="_blank">"Digital Economy and Youth Employment in MENA" - Bulletin of the Atomic Scientists</a></li>
-                    <li><a href="#" target="_blank">"Perspectives on Democracy and Governance" - BirGün</a></li>
-                </ul>
-            </section>
-            <section id="media" class="content">
-                <h2>Media</h2>
-                <p>Interviews, mentions, and other media appearances.</p>
+            <section id="publications">
+                <h2>Latest Publication(s) & Updates</h2>
+                <p>December 2024 — <a href="#">"Policy Innovation in the Middle East"</a>, Wilson Center.</p>
+                <p>November 2024 — <a href="#">"Youth Employment and Digital Economies"</a>, Bulletin of the Atomic Scientists.</p>
             </section>
         </main>
     </div>
-    <footer>
-        <p>&copy; 2024 Yusuf Can. All rights reserved.</p>
-    </footer>
-    <script>
-        // JavaScript for tab switching
-        const tabs = document.querySelectorAll('.tabs a');
-        const contents = document.querySelectorAll('.content');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', e => {
-                e.preventDefault();
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
-
-                tab.classList.add('active');
-                document.querySelector(tab.getAttribute('href')).classList.add('active');
-            });
-        });
-    </script>
 </body>
 </html>

@@ -3,8 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yusuf Can - Portfolio</title>
+    <title>Yusuf Can - Media Appearances</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            width: 250px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .headshot {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .social-links a, .top-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .top-links {
+            background-color: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        section {
+            padding: 2rem;
+        }
+        .entry {
+            margin-bottom: 1.5rem;
+        }
+        .date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.2rem 0;
+        }
+        .outlet {
+            font-style: italic;
+            color: #444;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -23,21 +82,254 @@
                 <a href="publications.html">Publications</a>
                 <a href="cv.html">CV</a>
             </nav>
-            <section id="bio">
-                <h2>About Me</h2>
-                <p>
-                    I am a dedicated professional in political science and Middle Eastern affairs, currently serving as the Program Coordinator for the Middle East Program at The Wilson Center. My work focuses on fostering impactful discussions, leading research initiatives, and connecting stakeholders across various sectors.
-                </p>
-                <p>
-                    Previously, I completed my M.A. in Democracy and Governance at Georgetown University and my B.A. in Political Science at California State University, Sacramento.
-                </p>
-            </section>
-            <section id="publications">
-                <h2>Latest Publication(s) & Updates</h2>
-                <p>December 2024 — <a href="#">"Policy Innovation in the Middle East"</a>, Wilson Center.</p>
-                <p>November 2024 — <a href="#">"Youth Employment and Digital Economies"</a>, Bulletin of the Atomic Scientists.</p>
+            <section id="media">
+                <h2>Media Appearances</h2>
+                <div id="media-list"></div>
             </section>
         </main>
     </div>
+
+    <script>
+        const mediaEntries = [
+  {
+    "outlet": "L’orient Le Jour",
+    "title": "Les appels au boycott accentuent la nervosité d’Ankara",
+    "date": "2025-04-07",
+    "link": "https://www.lorientlejour.com/article/1454890/les-appels-au-boycott-accentuent-la-nervosite-dankara.html"
+  },
+  {
+    "outlet": "L’orient Le Jour",
+    "title": "One-day boycott shakes Turkey as opposition protests Imamoglu arrest",
+    "date": "2025-04-07",
+    "link": "https://today.lorientlejour.com/article/1454957/one-day-boycott-shakes-turkey-as-opposition-protests-imamoglu-arrest.html?_gl=1*mgw7of*_gcl_au*NzE5MDU2ODg1LjE3NDM1ODc4NDg"
+  },
+  {
+    "outlet": "China Newsweek",
+    "title": "After fighting for half a century, he finally \"put down his weapon\"",
+    "date": "2025-04-03",
+    "link": "https://news.inewsweek.cn/world/2025-04-01/24884.shtml"
+  },
+  {
+    "outlet": "L'Événement syndical",
+    "title": "Turquie: face à Erdogan, la riposte populaire et syndicale s’organise",
+    "date": "2025-04-03",
+    "link": "https://www.evenement.ch/articles/turquie-face-erdogan-la-riposte-populaire-et-syndicale-sorganise"
+  },
+  {
+    "outlet": "BBC News",
+    "title": "Turkish protests",
+    "date": "2025-04-01",
+    "link": "https://www.linkedin.com/posts/yusuf-can-788132248_i-spoke-on-bbc-news-about-the-turkish-protests-activity-7311733060146728960-nGXC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0-UNgBzHqw1BFFkUSzooDR-hzhGMLXXvA"
+  },
+  {
+    "outlet": "Euractiv",
+    "title": "X says it defends free speech despite blocked accounts in Turkey",
+    "date": "2025-03-25",
+    "link": "https://www.euractiv.com/section/tech/news/x-says-it-defends-free-speech-despite-blocked-accounts-in-turkey/"
+  },
+  {
+    "outlet": "El Espanol",
+    "title": "La detención del principal rival de Erdogan sólo es la punta del iceberg de la escalada de represión en Turquía",
+    "date": "2025-03-22",
+    "link": "https://www.elespanol.com/edicion/20250322/detencion-principal-rival-erdogan-solo-punta-iceberg-escalada-represion-turquia/933316673_16.html"
+  },
+  {
+    "outlet": "NPR",
+    "title": "Hundreds arrested in Turkey protests",
+    "date": "2025-03-22",
+    "link": "https://www.npr.org/2025/03/22/nx-s1-5336274/hundreds-arrested-in-turkey-protests"
+  },
+  {
+    "outlet": "Kathimerini",
+    "title": "Despite crackdown and silencing, Turkish protests gain momentum",
+    "date": "2025-03-23",
+    "link": "https://www.ekathimerini.com/politics/1264989/despite-crackdown-and-silencing-turkish-protests-gain-momentum/"
+  },
+  {
+    "outlet": "Politico EU",
+    "title": "Musk’s X suspends opposition accounts in Turkey amid civil unrest",
+    "date": "2025-03-22",
+    "link": "https://www.politico.eu/article/musks-x-suspends-opposition-accounts-turkey-protest-civil-unrest-erdogan-imamoglu-istanbul-mayor/"
+  }
+,
+  {
+    "outlet": "i24NEWS",
+    "title": "Turkey protests",
+    "date": "2025-03-22",
+    "link": "https://www.linkedin.com/posts/yusuf-can-788132248_i-spoke-with-laura-cellier-on-i24news-about-activity-7308306034756841472-n6hN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD0-UNgBzHqw1BFFkUSzooDR-hzhGMLXXvA"
+  },
+  {
+    "outlet": "Expresso",
+    "title": "Cessar-fogo em Gaza: os termos do acordo, o papel de Trump, as desconfianças continuadas e o perigo de um “sentimento de vingança” violento",
+    "date": "2025-01-15",
+    "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2025-01-15-cessar-fogo-em-gaza-os-termos-do-acordo-o-papel-de-trump-as-desconfiancas-continuadas-e-o-perigo-de-um-sentimento-de-vinganca-violento-87430465#Echobox=1736973691"
+  },
+  {
+    "outlet": "VOA Indonesia",
+    "title": "Reaksi terhadap Transisi Suriah dan Kekhawatiran Kembalinya ISIS",
+    "date": "2024-12-12",
+    "link": "https://www.voaindonesia.com/a/reaksi-terhadap-transisi-suriah-dan-kekhawatiran-kembalinya-isis/7895616.html"
+  },
+  {
+    "outlet": "Jacobin",
+    "title": "Will Kurds Survive in the New Syria?",
+    "date": "2024-12-09",
+    "link": "https://jacobin.com/2024/12/kurds-syria-assad-hts-dannes"
+  },
+  {
+    "outlet": "Wilson Center",
+    "title": "A Conversation with Ambassador James Jeffrey on Syria’s Shifting Dynamics",
+    "date": "2024-12-02",
+    "link": "https://www.wilsoncenter.org/video/conversation-ambassador-james-jeffrey-syrias-shifting-dynamics"
+  },
+  {
+    "outlet": "Bulletin of the Atomic Scientists",
+    "title": "Trump’s potential impact on emerging and disruptive technologies",
+    "date": "2024-11-06",
+    "link": "https://thebulletin.org/2024/11/trumps-potential-impact-on-emerging-and-disruptive-technologies/?utm_source=Twitter&utm_medium=SocialMedia&utm_campaign=TwitterPost112024&utm_content=DisruptiveTechnologies_TrumpsImpactOnTech_11062024"
+  },
+  {
+    "outlet": "VOA Turkish",
+    "title": "ABD seçim sonuçları mahkemelerde mi bitecek?",
+    "date": "2024-11-05",
+    "link": "https://www.youtube.com/watch?v=K7aV-vy5I48"
+  },
+  {
+    "outlet": "VOA Turkish",
+    "title": "7 Ekim sonrası gerilen Türkiye-İsrail ilişkileri Türkiye’deki Yahudi toplumunu olumsuz etkiliyor",
+    "date": "2024-10-09",
+    "link": "https://d33vxfhewnqf4z.cloudfront.net/a/ekim-7-sonrasi-gerilen-turkiye-israil-iliskileri-turkiye-yahudi-toplumunu-olumsuz-etkiliyor-/7816572.html?utm_source=twitter&utm_medium=social&utm_campaign=dlvr.it"
+  },
+  {
+    "outlet": "Expresso",
+    "title": "Uma ofensiva de desgaste para Israel? Após a morte do seu líder, “o Hezbollah está provavelmente a preparar-se para uma guerra terrestre”",
+    "date": "2024-10-14",
+    "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-10-14-uma-ofensiva-de-desgaste-para-israel--apos-a-morte-do-seu-lider-o-hezbollah-esta-provavelmente-a-preparar-se-para-uma-guerra-terrestre-1698cb0f"
+  },
+  {
+    "outlet": "Expresso",
+    "title": "Hamas, Hezbollah, Gaza, Cisjordânia, Israel e Líbano: no Médio Oriente, a guerra passou a ser regional",
+    "date": "2024-10-02",
+    "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-10-02-hamas-hezbollah-gaza-cisjordania-israel-e-libano-no-medio-oriente-a-guerra-passou-a-ser-regional-f545fbb4"
+  }
+,
+  {
+    "outlet": "BBC Urdu",
+    "title": "Israel and Lebanon war",
+    "date": "2024-10-01",
+    "link": "https://www.bbc.com/arabic/articles/c62xz50kr9do"
+  },
+  {
+    "outlet": "Expresso",
+    "title": "Que cálculo fará Netanyahu e qual é o próximo passo no Líbano? “A sua única esperança de manter-se no poder é continuar a guerra”",
+    "date": "2024-09-26",
+    "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-10-02-hamas-hezbollah-gaza-cisjordania-israel-e-libano-no-medio-oriente-a-guerra-passou-a-ser-regional-f545fbb4"
+  },
+  {
+    "outlet": "Business insider",
+    "title": "Turkey's 'balancing act' with BRICS may stoke NATO fears, but the West needn't be too worried, analysts say",
+    "date": "2024-09-15",
+    "link": "https://www.businessinsider.com/turkey-balancing-act-brics-nato-west-analysts-2024-9?utm_medium=social&utm_source=twitter&utm_campaign=business-sf"
+  },
+  {
+    "outlet": "VOA Indonesia",
+    "title": "Di Tengah Desakan Gencatan Senjata, Israel Serang Gaza, Lebanon Selatan",
+    "date": "2024-08-23",
+    "link": "https://www.voaindonesia.com/a/di-tengah-desakan-gencatan-senjata-israel-serang-gaza-lebanon-selatan/7753858.html"
+  },
+  {
+    "outlet": "VOA Indonesia",
+    "title": "Perundingan Gencatan Senjata Israel-Hamas di Tengah aNCAMAN eSKALASI DENGAN iRAN",
+    "date": "2024-08-08",
+    "link": "https://www.voaindonesia.com/embed/player/article/7744957.html"
+  },
+  {
+    "outlet": "VOA Indonesia",
+    "title": "Respons AS terhadap Eskalasi Ketegangan di Timur Tengah",
+    "date": "2024-08-06",
+    "link": "https://www.youtube.com/watch?v=INkyEiQ4vfw"
+  },
+  {
+    "outlet": "El Independiente",
+    "title": "La metamorfosis de Arabia Saudí, de paria a árbitro",
+    "date": "2024-08-01",
+    "link": "https://www.elindependiente.com/internacional/2024/08/01/el-asesinato-del-lider-de-hamas-que-lleva-el-conflicto-al-borde-del-abismo/"
+  },
+  {
+    "outlet": "Expresso",
+    "title": "A China vê uma oportunidade para uma maior influência no mundo árabe”: o acordo selado em Pequim que foi jogada de mestre para o Hamas",
+    "date": "2024-07-26",
+    "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-07-26-a-china-ve-uma-oportunidade-para-uma-maior-influencia-no-mundo-arabe-o-acordo-selado-em-pequim-que-foi-jogada-de-mestre-para-o-hamas-53859bdb#Echobox=1722011560"
+  },
+  {
+    "outlet": "Expresso",
+    "title": "A oportunidade perfeita para a Al-Qaeda e o Daesh se reconstruírem”: raiva que nasceu em Gaza pode ter “consequências enormes por anos",
+    "date": "2024-07-22",
+    "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-07-22-a-oportunidade-perfeita-para-a-al-qaeda-e-o-daesh-se-reconstruirem-raiva-que-nasceu-em-gaza-pode-ter-consequencias-enormes-por-anos-ec878484#Echobox=1721678354"
+  },
+  {
+    "outlet": "Expresso",
+    "title": "Putin não será o único à espera da eleição de Trump: em Israel, Netanyahu arrasta as negociações de olhos postos nos EUA",
+    "date": "2024-07-19",
+    "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-07-19-putin-nao-sera-o-unico-a-espera-da-eleicao-de-trump-em-israel-netanyahu-arrasta-as-negociacoes-de-olhos-postos-nos-eua-572ac68c#Echobox=1721421579"
+  }
+,
+  {
+    "outlet": "The Media Line",
+    "title": "Erdogan To Attend China-led Summit Amid Series of Eastern-Aligned Meetings",
+    "date": "2024-07-01",
+    "link": "https://themedialine.org/by-region/erdogan-to-attend-china-led-summit-amid-series-of-eastern-aligned-meetings/"
+  },
+  {
+    "outlet": "Nederlands Ddagblad",
+    "title": "De nieuwste verovering van president Erdogan: eeuwenoude Turkse Chorakerk ingewijd als moskee",
+    "date": "2024-05-15",
+    "link": "https://www.nd.nl/geloof/geloof/1223100/de-nieuwste-verovering-van-president-erdogan-eeuwenoude-turks"
+  },
+  {
+    "outlet": "The Media Line",
+    "title": "Turkey Strengthens NATO Ties With Participation in Large-Scale Neptune Strike Military Drills",
+    "date": "2024-04-30",
+    "link": "https://themedialine.org/by-region/turkey-strengthens-nato-ties-with-participation-in-large-scale-neptune-strike-military-drills/"
+  },
+  {
+    "outlet": "VOA Kurdish",
+    "title": "Serketina DEM Partî ya Hilbijartînê li Washingtonê Çawa Tê Dîtin?",
+    "date": "2024-04-09",
+    "link": "https://www.dengeamerika.com/a/demparty_turkey_elections/7561704.html"
+  },
+  {
+    "outlet": "The Guardian",
+    "title": "Turkey’s opposition party sweeps to local elections victory in snub to Erdoğan",
+    "date": "2024-03-21",
+    "link": "https://www.theguardian.com/world/2024/mar/31/turkey-local-elections-istanbul-mayor-ekrem-imamoglu-recep-tayyip-erdogan"
+  },
+  {
+    "outlet": "Wilson Center",
+    "title": "360° View of Policies Needed to Secure Shipping Chokepoints",
+    "date": "2024-02-13",
+    "link": "https://www.wilsoncenter.org/article/360deg-view-policies-needed-secure-shipping-chokepoints"
+  },
+  {
+    "outlet": "Wilson Center",
+    "title": "Hamas-Israel War: Views From Wilson Center Experts",
+    "date": "2023-10-24",
+    "link": "https://www.wilsoncenter.org/article/hamas-israel-war-views-wilson-center-experts"
+  }
+];
+        // All media entries will be inserted in next steps
+        const container = document.getElementById('media-list');
+        mediaEntries.sort((a, b) => new Date(b.date) - new Date(a.date));
+        mediaEntries.forEach(entry => {
+            const div = document.createElement('div');
+            div.className = 'entry';
+            div.innerHTML = `
+                <div class="date">${new Date(entry.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                <div class="title"><a href="${entry.link}" target="_blank">${entry.title}</a></div>
+                <div class="outlet">${entry.outlet}</div>
+            `;
+            container.appendChild(div);
+        });
+    </script>
 </body>
 </html>

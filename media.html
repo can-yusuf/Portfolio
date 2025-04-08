@@ -1,131 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Media Appearances</title>
-  <style>
-    body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #ffffff;
-  color: #222;
-  display: flex;
-  height: 100%;
-  min-height: 100vh;
-}
-
-    .sidebar {
-      width: 250px;
-      background-color: #f5f5f5;
-      padding: 2rem;
-      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    }
-
-    .sidebar img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-
-    .sidebar h2 {
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .sidebar a {
-      display: block;
-      color: #0066cc;
-      text-decoration: none;
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    .main {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-}
-
-    .navbar {
-      background-color: #ffffff;
-      border-bottom: 1px solid #ccc;
-      padding: 1rem 2rem;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .navbar a {
-      color: #0066cc;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .content {
-  padding: 2rem;
-  overflow-y: auto;
-  flex-grow: 1;
-}
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.5rem;
-    }
-
-    .entry {
-      margin-bottom: 1.5rem;
-    }
-
-    .date {
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    .title {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 0.2rem 0;
-    }
-
-    .outlet {
-      font-style: italic;
-      color: #444;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusuf Can - Media Appearances</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            width: 250px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .headshot {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .social-links a, .top-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .top-links {
+            background-color: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        section {
+            padding: 2rem;
+        }
+        .entry {
+            margin-bottom: 1.5rem;
+        }
+        .date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.2rem 0;
+        }
+        .outlet {
+            font-style: italic;
+            color: #444;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <div class="sidebar">
-    <img src="https://yusufcan.net/profile.jpg" alt="Profile" />
-    <h2>Yusuf Can</h2>
-    <a href="mailto:contact@yusufcan.net">contact@yusufcan.net</a>
-    <a href="/">Home</a>
-    <a href="/resume">Resume</a>
-    <a href="/publications">Publications</a>
-    <a href="/media">Media</a>
-  </div>
-  <div class="main">
-    <div class="navbar">
-      <a href="/">Home</a>
-      <a href="/resume">Resume</a>
-      <a href="/publications">Publications</a>
-      <a href="/media">Media</a>
+    <div class="container">
+        <aside class="sidebar">
+            <img src="headshot.jpg" alt="Yusuf Can" class="headshot">
+            <h1>Yusuf Can</h1>
+            <nav class="social-links">
+                <a href="https://twitter.com/" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">LinkedIn</a>
+            </nav>
+            <p class="contact">Contact via email:<br><a href="mailto:ycan1412@gmail.com">ycan1412@gmail.com</a></p>
+        </aside>
+        <main>
+            <nav class="top-links">
+                <a href="media.html">Media</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html">CV</a>
+            </nav>
+            <section id="media">
+                <h2>Media Appearances</h2>
+                <div id="media-list"></div>
+            </section>
+        </main>
     </div>
-    <div class="content">
-      <h1>Media Appearances</h1>
-      <div id="media-list"></div>
-    </div>
-  </div>
 
-  <script>
-    const mediaEntries = [
+    <script>
+        const mediaEntries = [
   {
     "outlet": "L’orient Le Jour",
     "title": "Les appels au boycott accentuent la nervosité d’Ankara",
@@ -186,6 +151,7 @@
     "date": "2025-03-22",
     "link": "https://www.politico.eu/article/musks-x-suspends-opposition-accounts-turkey-protest-civil-unrest-erdogan-imamoglu-istanbul-mayor/"
   }
+,
   {
     "outlet": "i24NEWS",
     "title": "Turkey protests",
@@ -245,13 +211,14 @@
     "title": "Hamas, Hezbollah, Gaza, Cisjordânia, Israel e Líbano: no Médio Oriente, a guerra passou a ser regional",
     "date": "2024-10-02",
     "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-10-02-hamas-hezbollah-gaza-cisjordania-israel-e-libano-no-medio-oriente-a-guerra-passou-a-ser-regional-f545fbb4"
-  },
+  }
+,
   {
     "outlet": "BBC Urdu",
     "title": "Israel and Lebanon war",
     "date": "2024-10-01",
     "link": "https://www.bbc.com/arabic/articles/c62xz50kr9do"
-  }
+  },
   {
     "outlet": "Expresso",
     "title": "Que cálculo fará Netanyahu e qual é o próximo passo no Líbano? “A sua única esperança de manter-se no poder é continuar a guerra”",
@@ -305,13 +272,14 @@
     "title": "Putin não será o único à espera da eleição de Trump: em Israel, Netanyahu arrasta as negociações de olhos postos nos EUA",
     "date": "2024-07-19",
     "link": "https://expresso.pt/internacional/medio-oriente/guerra-israel-hamas/2024-07-19-putin-nao-sera-o-unico-a-espera-da-eleicao-de-trump-em-israel-netanyahu-arrasta-as-negociacoes-de-olhos-postos-nos-eua-572ac68c#Echobox=1721421579"
-  },
+  }
+,
   {
     "outlet": "The Media Line",
     "title": "Erdogan To Attend China-led Summit Amid Series of Eastern-Aligned Meetings",
     "date": "2024-07-01",
     "link": "https://themedialine.org/by-region/erdogan-to-attend-china-led-summit-amid-series-of-eastern-aligned-meetings/"
-  }
+  },
   {
     "outlet": "Nederlands Ddagblad",
     "title": "De nieuwste verovering van president Erdogan: eeuwenoude Turkse Chorakerk ingewijd als moskee",
@@ -349,23 +317,19 @@
     "link": "https://www.wilsoncenter.org/article/hamas-israel-war-views-wilson-center-experts"
   }
 ];
-];
-
-    mediaEntries.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    const container = document.getElementById('media-list');
-    mediaEntries.forEach(entry => {
-      const div = document.createElement('div');
-      div.className = 'entry';
-      div.innerHTML = `
-        <div class="date">${new Date(entry.date).toLocaleDateString('en-US', {
-          year: 'numeric', month: 'long', day: 'numeric'
-        })}</div>
-        <div class="title"><a href="${entry.link}" target="_blank">${entry.title}</a></div>
-        <div class="outlet">${entry.outlet}</div>
-      `;
-      container.appendChild(div);
-    });
-  </script>
+        // All media entries will be inserted in next steps
+        const container = document.getElementById('media-list');
+        mediaEntries.sort((a, b) => new Date(b.date) - new Date(a.date));
+        mediaEntries.forEach(entry => {
+            const div = document.createElement('div');
+            div.className = 'entry';
+            div.innerHTML = `
+                <div class="date">${new Date(entry.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+                <div class="title"><a href="${entry.link}" target="_blank">${entry.title}</a></div>
+                <div class="outlet">${entry.outlet}</div>
+            `;
+            container.appendChild(div);
+        });
+    </script>
 </body>
 </html>

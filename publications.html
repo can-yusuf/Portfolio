@@ -5,11 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yusuf Can - Publications</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            background-color: #f4f4f4;
+            padding: 2rem;
+            width: 250px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .headshot {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .social-links a, .top-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .top-links {
+            background-color: #fff;
+            padding: 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        section {
+            padding: 2rem;
+        }
+        .entry {
+            margin-bottom: 2rem;
+        }
+        .date {
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.2rem 0;
+        }
+        .outlet {
+            font-style: italic;
+            color: #444;
+        }
+        .summary {
+            margin-top: 0.3rem;
+            font-size: 0.95rem;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
-            <img src="headshot.jpg" alt="Yusuf Can" class="headshot">
+            <img src="headshot.jpg" alt="Yusuf Can" class="headshot" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
             <h1>Yusuf Can</h1>
             <nav class="social-links">
                 <a href="https://x.com/YusufCan_EN" target="_blank">Twitter</a>
@@ -26,104 +86,31 @@
             </nav>
             <section id="publications">
                 <h2>Publications & Interviews</h2>
-                <ul>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/video/imamoglus-arrest-sparks-nationwide-unrest-and-raises-fears-turkish-democracy" target="_blank">
-                            Imamoglu’s Arrest Sparks Nationwide Unrest and Raises Fears for Turkish Democracy
-                        </a> – Dec 15, 2023<br>
-                        Analysis of the political fallout and democratic implications of Ekrem Imamoglu’s arrest.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/video/kurdish-militant-group-pkk-agrees-disarm-turkey-weighs-next-steps" target="_blank">
-                            Kurdish Militant Group PKK Agrees to Disarm as Turkey Weighs Next Steps
-                        </a> – Nov 10, 2023<br>
-                        A look at what PKK’s disarmament could mean for peace efforts in Turkey.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/event/syria-transition-challenges-and-prospects" target="_blank">
-                            Syria Transition: Challenges and Prospects
-                        </a> – Oct 5, 2023<br>
-                        A Wilson Center event assessing Syria’s transitional dilemmas and their regional impacts.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/what-syrias-opposition-resurgence-means-ankara" target="_blank">
-                            What Syria’s Opposition Resurgence Means for Ankara
-                        </a> – Sep 20, 2023<br>
-                        Implications of renewed opposition activity in Syria for Turkish regional policy.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/video/conversation-ambassador-james-jeffrey-syrias-shifting-dynamics" target="_blank">
-                            A Conversation with Ambassador James Jeffrey: Syria’s Shifting Dynamics
-                        </a> – Aug 15, 2023<br>
-                        Interview exploring U.S. policy and Syrian regional politics.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/turkey-israel-relations-after-october-7-layers-complexity-and-posturing" target="_blank">
-                            Turkey-Israel Relations After October 7
-                        </a> – Jul 30, 2023<br>
-                        Dissecting posturing and diplomacy in Turkish-Israeli relations post-October 7.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/event/future-euro-mena-relations-conference" target="_blank">
-                            Future of Euro-MENA Relations Conference
-                        </a> – Jun 25, 2023<br>
-                        Conference convening Euro-MENA experts to discuss cooperation and shared policy goals.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/publication/future-euro-mena-relations" target="_blank">
-                            Future of Euro-MENA Relations
-                        </a> – Jun 20, 2023<br>
-                        Strategic publication on trade, diplomacy, and regional transformation.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/turkeys-balancing-act-navigating-nato-brics-and-other-global-partnerships" target="_blank">
-                            Turkey’s Balancing Act: Navigating NATO, BRICS, and Other Global Partnerships
-                        </a> – May 15, 2023<br>
-                        Analysis of how Turkey juggles diverse global alliances.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/shift-power-chp-win-ushers-recalibration-turkish-politics" target="_blank">
-                            A Shift in Power: CHP Win Ushers Recalibration in Turkish Politics
-                        </a> – Apr 10, 2023<br>
-                        Examining CHP’s electoral gains and their wider political significance.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/video/smart-take-erdogan-suffers-historic-loss-opposition-turkeys-local-elections" target="_blank">
-                            Smart Take: Erdogan Suffers Historic Loss in Turkey’s Local Elections
-                        </a> – Mar 31, 2023<br>
-                        A quick video take on Erdoğan’s election setbacks.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/video/smart-take-millions-voters-headed-polls-turkey" target="_blank">
-                            Smart Take: Millions of Voters Headed to the Polls in Turkey
-                        </a> – Mar 29, 2023<br>
-                        Pre-election preview on Turkey’s political climate.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/360deg-view-policies-needed-secure-shipping-chokepoints" target="_blank">
-                            360° View: Policies Needed to Secure Shipping Chokepoints
-                        </a> – Feb 20, 2023<br>
-                        Policy insights on safeguarding strategic maritime trade routes.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/hamas-israel-war-views-wilson-center-experts" target="_blank">
-                            Hamas-Israel War: Views from Wilson Center Experts
-                        </a> – Jan 15, 2023<br>
-                        Multi-expert perspectives on the outbreak and fallout of the Hamas-Israel war.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/digital-deception-disinformations-impact-israel-hamas-war" target="_blank">
-                            Digital Deception: Disinformation’s Impact in the Israel-Hamas War
-                        </a> – Jan 10, 2023<br>
-                        Examining how misinformation campaigns shaped the Israel-Hamas conflict.
-                    </li>
-                    <li>
-                        <a href="https://www.wilsoncenter.org/article/reinvigorating-civil-society-turkeys-electoral-autocracy" target="_blank">
-                            Reinvigorating Civil Society in Turkey’s Electoral Autocracy
-                        </a> – Dec 20, 2022<br>
-                        Discusses how civic institutions can survive and grow under increasingly authoritarian rule.
-                    </li>
-                </ul>
+                <div class="entry">
+                    <div class="date">December 15, 2023</div>
+                    <div class="title"><a href="https://www.wilsoncenter.org/video/imamoglus-arrest-sparks-nationwide-unrest-and-raises-fears-turkish-democracy" target="_blank">Imamoglu’s Arrest Sparks Nationwide Unrest and Raises Fears for Turkish Democracy</a></div>
+                    <div class="outlet">Wilson Center – Interview</div>
+                    <div class="summary">An analysis of the political implications following Ekrem Imamoglu's arrest, highlighting concerns over democratic erosion in Turkey.</div>
+                </div>
+                <div class="entry">
+                    <div class="date">November 10, 2023</div>
+                    <div class="title"><a href="https://www.wilsoncenter.org/video/kurdish-militant-group-pkk-agrees-disarm-turkey-weighs-next-steps" target="_blank">Kurdish Militant Group PKK Agrees to Disarm as Turkey Weighs Next Steps</a></div>
+                    <div class="outlet">Wilson Center – Interview</div>
+                    <div class="summary">A discussion on the PKK’s decision to disarm and the future of peace efforts in Turkey's Kurdish regions.</div>
+                </div>
+                <div class="entry">
+                    <div class="date">October 5, 2023</div>
+                    <div class="title"><a href="https://www.wilsoncenter.org/event/syria-transition-challenges-and-prospects" target="_blank">Syria Transition: Challenges and Prospects</a></div>
+                    <div class="outlet">Wilson Center – Panel Event</div>
+                    <div class="summary">A high-level discussion exploring the political and humanitarian transition in Syria and its implications for regional stakeholders.</div>
+                </div>
+                <div class="entry">
+                    <div class="date">September 20, 2023</div>
+                    <div class="title"><a href="https://www.wilsoncenter.org/article/what-syrias-opposition-resurgence-means-ankara" target="_blank">What Syria’s Opposition Resurgence Means for Ankara</a></div>
+                    <div class="outlet">Wilson Center – Publication</div>
+                    <div class="summary">A look into how recent developments in Syria's opposition landscape may shape Turkish foreign policy choices.</div>
+                </div>
+                <!-- Add more entries here as needed in the same format -->
             </section>
         </main>
     </div>
